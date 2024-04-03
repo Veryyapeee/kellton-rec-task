@@ -1,11 +1,14 @@
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
+import {styled} from 'styled-components/native';
+
+const StyledText = styled.Text`
+  color: ${theme => theme.theme.font.contrast};
+`;
 
 export const InitialScreen = () => {
-  //   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
-
   return (
     <View>
-      <Text>Initial</Text>
+      <StyledText>Initial</StyledText>
     </View>
   );
 };
