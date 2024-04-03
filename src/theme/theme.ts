@@ -5,15 +5,15 @@ export const theme: Theme = {
     primary: '#FFF',
     secondary: '#000',
     danger: '#FF0000',
-    contrast: '#FFA500',
+    contrast: '#dc7800',
   },
   button: {
-    backgroundPrimary: '#0000FF',
+    backgroundPrimary: '#007bd4',
     fontPrimary: '#FFF',
   },
   app: {
-    backgroundPrimary: '#FFF',
-    backgroundSecondary: '#00008B',
-    contrast: '#FFA500',
+    backgroundPrimary: '#182941',
+    backgroundSecondary: '#FFF',
+    contrast: '#dc7800',
   },
 };
