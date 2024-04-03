@@ -1,15 +1,7 @@
-import {SafeAreaView, Text} from 'react-native';
+import {AppNavigator} from './Navigation/AppNavigator';
 
 const App = () => {
-  const backgroundStyle = {
-    backgroundColor: '#fff',
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <Text>Hello world!</Text>
-    </SafeAreaView>
-  );
+  return <AppNavigator />;
 };
 
 export default App;
