@@ -6,7 +6,7 @@ export type RootStackParamList = {
   InitialScreen: undefined;
   ModalSummaryForm: undefined;
   ShippingFormScreen: undefined;
-  WebViewScreen: undefined;
+  WebViewScreen: {url?: string};
 };
 
 export type ScreenType = keyof RootStackParamList;
