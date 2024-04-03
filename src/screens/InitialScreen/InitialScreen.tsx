@@ -1,5 +1,6 @@
-import {View} from 'react-native';
 import {styled} from 'styled-components/native';
+
+import {BaseScreen} from '../../components/Organism/BaseScreen';
 
 const StyledText = styled.Text`
   color: ${theme => theme.theme.font.contrast};
@@ -7,8 +8,8 @@ const StyledText = styled.Text`
 
 export const InitialScreen = () => {
   return (
-    <View>
+    <BaseScreen>
       <StyledText>Initial</StyledText>
-    </View>
+    </BaseScreen>
   );
 };
