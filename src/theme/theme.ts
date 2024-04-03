@@ -9,8 +9,8 @@ export const theme: Theme = {
       contrast: '#dc7800',
     },
     button: {
-      backgroundPrimary: '#007bd4',
-      fontPrimary: '#FFF',
+      primary: '#007bd4',
+      disabled: '#36454F',
     },
     app: {
       backgroundPrimary: '#182941',

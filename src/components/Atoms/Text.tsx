@@ -1,15 +1,11 @@
 import {TextProps} from 'react-native';
 import styled from 'styled-components/native';
 
-import {Theme} from '../../theme/types';
-
-type Variant = keyof Theme['palette']['font'];
-
-type Size = keyof Theme['typography']['text'];
+import {TextSizeVariant, TextVariant} from '../../theme/types';
 
 type CommonProps = {
-  variant?: Variant;
-  size?: Size;
+  variant?: TextVariant;
+  size?: TextSizeVariant;
 };
 
 type Props = CommonProps & TextProps;
