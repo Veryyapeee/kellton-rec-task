@@ -19,7 +19,7 @@ const StyledView = styled.View<StyledProps>`
   padding-top: ${props => (props.enableSafeArea ? props.topInset : 0)}px;
   padding-bottom: ${props => (props.enableSafeArea ? props.bottomInset : 0)}px;
   background-color: ${props =>
-    props.backgroundColor || props.theme.app.backgroundPrimary};
+    props.backgroundColor || props.theme.palette.app.backgroundPrimary};
 `;
 
 export const BaseScreen = ({
