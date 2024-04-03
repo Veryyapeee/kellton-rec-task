@@ -1,79 +1,106 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Kellton recruitment task
 
-# Getting Started
+## Description
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+This project was created for purposes of recruitment task. It's not prepared for production environment, including CI/CD and release config (like icons, keys etc.)
 
-## Step 1: Start the Metro Server
+Project is using [Rebrickable API](https://rebrickable.com/api/v3/docs/?key=), to use project properly, you will have to generate your own **API_KEY** and paste it into **.env** file
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Prerequisites
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- Your [node](https://nodejs.org/en/download/current) version needs to be greater or equal to **18**
+- Since project is using [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable) as a package manager, you need to have it installed on your local machine
+- You need to have [ruby](https://www.ruby-lang.org/en/documentation/installation/) installed with version **2.6.10** or greater
 
+Also please follow setup instruction prepared by official [react-native](https://reactnative.dev/docs/environment-setup) documentation
+
+## How to run the project for the first time
+
+### Setup
+
+Just run:
 ```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+yarn bootstrap
 ```
+And you are good to go
 
-## Step 2: Start your Application
+This will install gems, pods and node_modules.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+This will also automatically create **.env** file as a copy of **.env.example**.
 
-### For Android
+### Working with project
 
+Project is prepared for both **Android** and **iOS** (including iPads and Android Tablets)
+
+To run the project on target device:
+
+Run:
 ```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+yarn start // or
+yarn start-reset-cache
 ```
+To start watchman
 
-### For iOS
-
+### iOS
+Run:
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
 yarn ios
 ```
+And this will launch app on iOS simulator
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+### Android
+Run:
+```bash
+yarn android
+```
+And this will launch app on android emulator
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## If something went wrong...
 
-## Step 3: Modifying your App
+Run:
+```bash
+yarn clean
+```
 
-Now that you have successfully run the app, let's modify it.
+This will remove node_modules, pods and any build output
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+Then run ***yarn bootstrap*** again
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-## Congratulations! :tada:
+## Available commands
 
-You've successfully run and modified your React Native App. :partying_face:
+**bootstrap** - setup gems, pods and node_modules, should be used only after cleanup, or first repository initialization
 
-### Now what?
+**install-dependencies** - installs pods and node_modules
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+**gem-init** - installs gems
 
-# Troubleshooting
+**yarn** - installs dependencies
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+**pod-install** - installs pods
 
-# Learn More
+**start** - starts watchman
 
-To learn more about React Native, take a look at the following resources:
+**start-reset-cache** - starts watchman with cache reset (useful for example, after changing values in .env file)
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+**lint** - runs eslint check on files in **./src** folder
+
+**lint-debug** - runs lint with debug options
+
+**ts-compile** - runs TypeScript check based on `tsconfig.json`
+
+**pre-push-lint** - runs linter on pre-push
+
+**pre-push** - used to run codestyle on pre-push using [husky](https://typicode.github.io/husky/)
+
+**prettier/prettier-check** - runs prettier
+
+**clean** - clean node_modules, pods and any android/ios output files
+
+## Codestyle
+
+Tools used for code style and linting:
+
+- [Prettier](https://prettier.io/docs/en/)
+- [Eslint](https://eslint.org/docs/latest/use/getting-started)
+- [TypeScript Compiler](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
