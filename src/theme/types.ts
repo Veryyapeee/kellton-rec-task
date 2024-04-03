@@ -13,6 +13,7 @@ export type Theme = {
     app: {
       backgroundPrimary: string;
       backgroundSecondary: string;
+      placeholder: string;
       contrast: string;
     };
   };

@@ -16,6 +16,7 @@ export const theme: Theme = {
       backgroundPrimary: '#182941',
       backgroundSecondary: '#FFF',
       contrast: '#dc7800',
+      placeholder: '#36454F',
     },
   },
   typography: {
