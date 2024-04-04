@@ -2,13 +2,14 @@ import {useNavigation} from '@react-navigation/native';
 import {useCallback, useMemo} from 'react';
 
 import {useFetchMinifigParts} from '../../API/queries';
-import {MinifigPart} from '../../API/types';
+import {Minifig, MinifigPart} from '../../API/types';
 import {useMinifigContext} from '../../context/MinifigContext';
 import {StackNavigationType} from '../../Navigation/types';
 
 type Data = {
   state: {
     partsData?: MinifigPart[];
+    minifig?: Minifig;
   };
   onSubmit: () => void;
 };
@@ -32,10 +33,11 @@ export const ModalSummaryFormData = ({children}: Props) => {
     () => ({
       state: {
         partsData: partsData?.results,
+        minifig,
       },
       onSubmit,
     }),
-    [onSubmit, partsData?.results],
+    [minifig, onSubmit, partsData?.results],
   );
 
   return children(data);

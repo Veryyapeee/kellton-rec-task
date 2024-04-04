@@ -3,9 +3,8 @@ import {TouchableOpacity, TouchableWithoutFeedback} from 'react-native';
 import styled from 'styled-components/native';
 
 import {Minifig} from '../../../API/types';
-import {Image} from '../../Atoms/Image';
+import {MinifigWithTitle} from '../../Atoms/MinifigWithTitle';
 import {Text} from '../../Atoms/Text';
-import {If} from '../../If';
 import {MinifigTileContainer} from './Minifig.shared';
 
 type Props = {
@@ -36,17 +35,7 @@ export const MinifigTile = ({
   return (
     <TouchableWithoutFeedback onPress={onTilePress}>
       <MinifigTileContainer selected={selected}>
-        <Image
-          uri={minifig.set_img_url}
-          width={'100%'}
-          height={'70%'}
-          resizeMode="contain"
-        />
-        <If condition={minifig.name}>
-          <StyledText variant="secondary" fontWeight="bold" numberOfLines={2}>
-            {minifig.name}
-          </StyledText>
-        </If>
+        <MinifigWithTitle {...minifig} />
         <TouchableOpacity onPress={showDetails}>
           <StyledText variant="contrast" fontWeight="600">
             Show details
