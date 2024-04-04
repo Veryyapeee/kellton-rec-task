@@ -20,6 +20,7 @@ const StyledContainer = styled.TouchableOpacity<CommonProps>`
   background-color: ${props =>
     props.theme.palette.button[props.variant || 'primary']};
   padding: 10px 20px;
+  max-width: 200px;
   justify-content: center;
   align-items: center;
 `;
