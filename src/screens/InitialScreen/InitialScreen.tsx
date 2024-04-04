@@ -1,11 +1,11 @@
-import {useFetchMinifigs} from '../../API/queries';
+import {useFetchRandomPotterMinifigs} from '../../API/queries';
 import {Button} from '../../components/Atoms/Button';
 import {Text} from '../../components/Atoms/Text';
 import {BaseScreen} from '../../components/Organism/BaseScreen';
 import {MinifigCarousel} from '../../components/Organism/MinifigCarousel';
 
 export const InitialScreen = () => {
-  const {data} = useFetchMinifigs();
+  const {data} = useFetchRandomPotterMinifigs();
 
   const onPressTest = () => {};
   const onPressDetailsTest = () => {};
