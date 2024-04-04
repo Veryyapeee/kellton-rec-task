@@ -1,9 +1,10 @@
 import {useQuery} from '@tanstack/react-query';
+import {useCallback, useState} from 'react';
 
 import {getRandomArrayElements} from '../utils/utils';
 import {QueryKey} from './consts';
-import {fetchMinifigParts, fetchMinifigs} from './fetch.api';
-import {ApiQueryParams} from './types';
+import {fetchMinifigParts, fetchMinifigs, submitPurchase} from './fetch.api';
+import {ApiQueryParams, PurchasePayload} from './types';
 
 const AMOUNT_OF_RANDOM_MINIFIGS = 5;
 const POTTER_SEARCH_PHRASE = 'harry potter';
@@ -30,4 +31,20 @@ export const useFetchMinifigParts = (
   });
 
   return {data, error, isLoading};
+};
+
+export const useSubmitPurchase = () => {
+  const [loading, setLoading] = useState(false);
+
+  const mutation = useCallback((purchasePayload: PurchasePayload) => {
+    setLoading(true);
+    return submitPurchase(purchasePayload).finally(() => setLoading(false));
+  }, []);
+
+  return {
+    loading,
+    data: undefined,
+    error: undefined,
+    mutation,
+  };
 };

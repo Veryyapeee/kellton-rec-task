@@ -1,3 +1,10 @@
+import {ShippingFormData} from '../screens/ShippingFormScreen/types';
+
+export type PurchasePayload = {
+  shippingInfo: ShippingFormData;
+  minifig_id: string;
+};
+
 export type Minifig = {
   set_num: string;
   name: string;

@@ -24,3 +24,8 @@ export const getRandomArrayElements = <T>(
 
   return Array.from(result) as T[];
 };
+
+export const waitFor = (ms: number) =>
+  new Promise(resolve => {
+    setTimeout(resolve, ms);
+  });

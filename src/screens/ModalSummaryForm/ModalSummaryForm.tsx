@@ -38,7 +38,9 @@ export const ModalSummaryForm = () => {
               </MinifigContainer>
             </If>
             <MinifigPartsList data={state.partsData} />
-            <StyledButton onPress={onSubmit}>SUBMIT</StyledButton>
+            <StyledButton onPress={onSubmit} loading={state.loading}>
+              SUBMIT
+            </StyledButton>
           </>
         )}
       </ModalSummaryFormData>
