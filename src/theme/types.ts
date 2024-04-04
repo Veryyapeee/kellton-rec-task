@@ -32,3 +32,11 @@ export type TextVariant = keyof Theme['palette']['font'];
 export type TextSizeVariant = keyof Theme['typography']['text'];
 
 export type ButtonVariant = keyof Theme['palette']['button'];
+
+export type AppColor = keyof Theme['palette']['app'];
+
+export type Pixels = `${number}px`;
+export type Percentages = `${number}%`;
+export type Common = 'auto' | 'unset';
+
+export type DimensionValue = Pixels | Percentages | Common;

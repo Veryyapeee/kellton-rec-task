@@ -1,18 +1,27 @@
+import {useFetchMinifigs} from '../../API/queries';
 import {Button} from '../../components/Atoms/Button';
-import {Image} from '../../components/Atoms/Image';
 import {Text} from '../../components/Atoms/Text';
 import {BaseScreen} from '../../components/Organism/BaseScreen';
+import {MinifigCarousel} from '../../components/Organism/MinifigCarousel';
 
 export const InitialScreen = () => {
+  const {data} = useFetchMinifigs();
+
+  const onPressTest = () => {};
+  const onPressDetailsTest = () => {};
+
   return (
     <BaseScreen>
+      <Text size="xlg" fontWeight="bold">
+        CHOOSE YOUR MINIFIG
+      </Text>
+      <MinifigCarousel
+        data={data?.results}
+        onShowDetailsPress={onPressDetailsTest}
+        onTilePress={onPressTest}
+      />
       <Text>Initial</Text>
       <Button>Test button</Button>
-      <Image
-        width={200}
-        height={200}
-        uri={'https://cdn.rebrickable.com/media/sets/fig-000001/55726.jpg'}
-      />
     </BaseScreen>
   );
 };
