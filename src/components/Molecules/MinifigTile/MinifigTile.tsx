@@ -10,6 +10,7 @@ import {MinifigTileContainer} from './Minifig.shared';
 
 type Props = {
   minifig: Minifig;
+  selected?: boolean;
   onShowDetailsPress: (url: string) => void;
   onTilePress: (set_num: string) => void;
 };
@@ -22,6 +23,7 @@ export const MinifigTile = ({
   minifig,
   onShowDetailsPress: onShowDetailsPressProps,
   onTilePress: onTilePressProp,
+  selected,
 }: Props) => {
   const showDetails = useCallback(() => {
     onShowDetailsPressProps(minifig.set_url);
@@ -33,7 +35,7 @@ export const MinifigTile = ({
 
   return (
     <TouchableWithoutFeedback onPress={onTilePress}>
-      <MinifigTileContainer>
+      <MinifigTileContainer selected={selected}>
         <Image
           uri={minifig.set_img_url}
           width={'100%'}

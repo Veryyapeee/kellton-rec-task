@@ -27,6 +27,7 @@ export const InitialScreen = () => {
             </View>
             <MinifigCarousel
               data={state.data}
+              selectedId={state.selectedTileId}
               onShowDetailsPress={onShowDetailsPress}
               onTilePress={onTilePress}
             />

@@ -10,6 +10,7 @@ import {MinifigTilePlaceholder} from '../Molecules/MinifigTile/MinifigTilePlaceh
 
 type Props = {
   data?: Minifig[];
+  selectedId?: string;
   onShowDetailsPress: (url: string) => void;
   onTilePress: (set_num: string) => void;
 };
@@ -30,12 +31,17 @@ const Separator = styled.View`
 
 const renderListSeparator = () => <Separator />;
 
-export const MinifigCarousel = ({data, ...props}: Props) => {
+export const MinifigCarousel = ({data, selectedId, ...props}: Props) => {
   const renderItem = useCallback(
     ({item}: ListRenderItemInfo<Minifig>) => (
-      <MinifigTile minifig={item} key={item.set_num} {...props} />
+      <MinifigTile
+        minifig={item}
+        key={item.set_num}
+        selected={selectedId === item.set_num}
+        {...props}
+      />
     ),
-    [props],
+    [props, selectedId],
   );
 
   return (
