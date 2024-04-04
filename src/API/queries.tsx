@@ -21,7 +21,7 @@ export const useFetchRandomPotterMinifigs = () => {
 };
 
 export const useFetchMinifigParts = (
-  setNumber: string,
+  setNumber?: string,
   queryParams?: ApiQueryParams['lego/minifigs/{set_num}/parts/'],
 ) => {
   const {data, error, isLoading} = useQuery({

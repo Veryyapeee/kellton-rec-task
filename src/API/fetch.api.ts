@@ -19,10 +19,11 @@ export const fetchMinifigs = async (
 };
 
 export const fetchMinifigParts = async (
-  minifigId: string,
+  minifigId?: string,
   queryParams?: ApiQueryParams['lego/minifigs/{set_num}/parts/'],
 ) => {
-  const path = `lego/minifigs/${minifigId}/parts/` as ApiPath;
+  const path =
+    `lego/minifigs/${minifigId}/parts/` as 'lego/minifigs/{set_num}/parts/';
   const {data} = await fetchFromApi(path, queryParams);
   return data;
 };
