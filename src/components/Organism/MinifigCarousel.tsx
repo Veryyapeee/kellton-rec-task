@@ -1,5 +1,5 @@
 import {useCallback} from 'react';
-import {FlatList, ListRenderItemInfo} from 'react-native';
+import {FlatList, ListRenderItemInfo, ViewStyle} from 'react-native';
 import styled from 'styled-components/native';
 
 import {Minifig} from '../../API/types';
@@ -18,8 +18,10 @@ const ITEM_SEPARATOR_SIZE = 30;
 const ITEM_SPACING = (fullScreenWidth - minifigTileDimension) / 2;
 const SNAP_TO_INTERVAL = minifigTileDimension + ITEM_SEPARATOR_SIZE;
 
-const contentContainerStyles = {
+const contentContainerStyles: ViewStyle = {
   paddingHorizontal: ITEM_SPACING,
+  justifyContent: 'center',
+  alignItems: 'center',
 };
 
 const Separator = styled.View`

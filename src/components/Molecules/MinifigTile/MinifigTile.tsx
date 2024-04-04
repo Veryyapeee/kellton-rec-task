@@ -41,7 +41,7 @@ export const MinifigTile = ({
           resizeMode="contain"
         />
         <If condition={minifig.name}>
-          <StyledText variant="secondary" fontWeight="bold">
+          <StyledText variant="secondary" fontWeight="bold" numberOfLines={2}>
             {minifig.name}
           </StyledText>
         </If>

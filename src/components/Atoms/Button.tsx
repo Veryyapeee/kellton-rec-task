@@ -19,8 +19,7 @@ const StyledContainer = styled.TouchableOpacity<CommonProps>`
   border-radius: 15px;
   background-color: ${props =>
     props.theme.palette.button[props.variant || 'primary']};
-  padding: 8px 10px;
-  max-width: 150px;
+  padding: 10px 20px;
   justify-content: center;
   align-items: center;
 `;

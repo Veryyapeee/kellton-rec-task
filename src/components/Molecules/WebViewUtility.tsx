@@ -26,7 +26,7 @@ export const WebViewBackButton = () => {
 
   return (
     <StyledBackButtonContainer onPress={navigation.goBack}>
-      <Text>Back</Text>
+      <Text textAlign="left">Back</Text>
     </StyledBackButtonContainer>
   );
 };

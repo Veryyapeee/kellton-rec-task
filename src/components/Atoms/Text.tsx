@@ -7,6 +7,7 @@ type CommonProps = {
   variant?: TextVariant;
   size?: TextSizeVariant;
   fontWeight?: TextStyle['fontWeight'];
+  textAlign?: TextStyle['textAlign'];
 };
 
 type Props = CommonProps & TextProps;
@@ -15,7 +16,7 @@ const StyledText = styled.Text<CommonProps>`
   font-size: ${props => props.theme.typography.text[props.size || 'md']}px;
   color: ${props => props.theme.palette.font[props.variant || 'primary']};
   font-weight: ${props => props.fontWeight || '500'};
-  text-align: center;
+  text-align: ${props => props.textAlign || 'center'};
 `;
 
 export const Text = (props: Props) => <StyledText {...props} />;
