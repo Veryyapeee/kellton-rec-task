@@ -34,7 +34,7 @@ const StyledView = styled.View<StyledProps>`
   padding-top: ${props => (props.enableSafeArea ? props.topInset : 0)}px;
   padding-bottom: ${props => (props.enableSafeArea ? props.bottomInset : 0)}px;
   background-color: ${props =>
-    props.backgroundColor || props.theme.palette.app.backgroundPrimary};
+    props.theme.palette.app[props.backgroundColor || 'backgroundPrimary']};
 `;
 
 const StyledScrollView = styled.ScrollView<
@@ -42,7 +42,7 @@ const StyledScrollView = styled.ScrollView<
 >`
   flex: 1;
   background-color: ${props =>
-    props.backgroundColor || props.theme.palette.app.backgroundPrimary};
+    props.theme.palette.app[props.backgroundColor || 'backgroundPrimary']};
 `;
 
 const StyledKeyboardAvoidingView = styled(KeyboardAvoidingView)`

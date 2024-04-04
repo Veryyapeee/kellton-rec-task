@@ -4,6 +4,8 @@
 
 This project was created for purposes of recruitment task. It's not prepared for production environment, including CI/CD and release config (like icons, keys etc.)
 
+It's also build with mobile phones in mind, Android Tablet and iPadOS are not supported by default, so there could be some UI bugs.
+
 Project is using [Rebrickable API](https://rebrickable.com/api/v3/docs/?key=), to use project properly, you will have to generate your own **API_KEY** and paste it into **.env** file
 
 ## Prerequisites
@@ -104,3 +106,20 @@ Tools used for code style and linting:
 - [Prettier](https://prettier.io/docs/en/)
 - [Eslint](https://eslint.org/docs/latest/use/getting-started)
 - [TypeScript Compiler](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
+
+## Improvements
+
+List of improvements which should or can be done, and they weren't implemented for the purpose of recruitment task:
+
+- Launch screen
+- Network detection mechanism and refetching
+- Path aliases
+- External fonts
+- Translations (i18n)
+- Better error handling
+- FlatList optimization
+- More advanced store
+- Logger (internal debug logger, and external one - just logger, not whole RUM)
+- Creating dynamic utilities for tables
+- More "themed" components, like "Flex" to simplify applying styles flex/size related
+- Things like snack bar to display success/error information (nice have, IMO the less UI for errors the better)
