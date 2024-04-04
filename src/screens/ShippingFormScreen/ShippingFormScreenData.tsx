@@ -16,8 +16,8 @@ export const ShippingFormScreenData = ({children}: Props) => {
   const navigation = useNavigation<StackNavigationType>();
 
   const onSubmit = useCallback(
-    (_: ShippingFormData) => {
-      navigation.navigate('ModalSummaryForm');
+    (data: ShippingFormData) => {
+      navigation.navigate('ModalSummaryForm', {formData: data});
     },
     [navigation],
   );

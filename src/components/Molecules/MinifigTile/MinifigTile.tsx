@@ -12,7 +12,7 @@ type Props = {
   minifig: Minifig;
   selected?: boolean;
   onShowDetailsPress: (url: string) => void;
-  onTilePress: (set_num: string) => void;
+  onTilePress: (minifig: Minifig) => void;
 };
 
 const StyledText = styled(Text)`
@@ -30,8 +30,8 @@ export const MinifigTile = ({
   }, [onShowDetailsPressProps, minifig.set_url]);
 
   const onTilePress = useCallback(() => {
-    onTilePressProp(minifig.set_num);
-  }, [onTilePressProp, minifig.set_num]);
+    onTilePressProp(minifig);
+  }, [onTilePressProp, minifig]);
 
   return (
     <TouchableWithoutFeedback onPress={onTilePress}>

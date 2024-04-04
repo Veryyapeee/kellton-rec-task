@@ -2,9 +2,11 @@ import {NativeStackNavigationOptions} from '@react-navigation/native-stack';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {ComponentType} from 'react';
 
+import {ShippingFormData} from '../screens/ShippingFormScreen/types';
+
 export type RootStackParamList = {
   InitialScreen: undefined;
-  ModalSummaryForm: undefined;
+  ModalSummaryForm: {formData: ShippingFormData};
   ShippingFormScreen: undefined;
   WebViewScreen: {url?: string};
 };

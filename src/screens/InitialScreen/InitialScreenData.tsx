@@ -3,6 +3,7 @@ import {useCallback, useMemo, useState} from 'react';
 
 import {useFetchRandomPotterMinifigs} from '../../API/queries';
 import {Minifig} from '../../API/types';
+import {useMinifigContext} from '../../context/MinifigContext';
 import {StackNavigationType} from '../../Navigation/types';
 
 type Data = {
@@ -11,7 +12,7 @@ type Data = {
     selectedTileId?: string;
   };
   onShowDetailsPress: (url: string) => void;
-  onTilePress: (set_num: string) => void;
+  onTilePress: (minifig: Minifig) => void;
   onSubmit: () => void;
 };
 
@@ -21,6 +22,8 @@ type Props = {
 
 export const InitialScreenData = ({children}: Props) => {
   const navigation = useNavigation<StackNavigationType>();
+
+  const {setMinifig} = useMinifigContext();
 
   const [selectedTileId, setSelectedTileId] = useState<string | undefined>();
 
@@ -33,14 +36,21 @@ export const InitialScreenData = ({children}: Props) => {
     [navigation],
   );
 
-  const onTilePress = useCallback((set_num: string) => {
-    setSelectedTileId(prevId => {
-      if (prevId === set_num) {
-        return undefined;
-      }
-      return set_num;
-    });
-  }, []);
+  const onTilePress = useCallback(
+    (minifig: Minifig) => {
+      const {set_num} = minifig;
+
+      setSelectedTileId(prevId => {
+        if (prevId === set_num) {
+          setMinifig(undefined);
+          return undefined;
+        }
+        setMinifig(minifig);
+        return set_num;
+      });
+    },
+    [setMinifig],
+  );
 
   const onSubmit = useCallback(() => {
     navigation.navigate('ShippingFormScreen');

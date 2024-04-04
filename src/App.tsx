@@ -2,6 +2,7 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {ThemeProvider} from 'styled-components/native';
 
+import MinifixContextProvider from './context/MinifigContext';
 import {AppNavigator} from './Navigation/AppNavigator';
 import {theme} from './theme/theme';
 
@@ -11,9 +12,11 @@ const App = () => {
   return (
     <QueryClientProvider client={client}>
       <ThemeProvider theme={theme}>
-        <SafeAreaProvider>
-          <AppNavigator />
-        </SafeAreaProvider>
+        <MinifixContextProvider>
+          <SafeAreaProvider>
+            <AppNavigator />
+          </SafeAreaProvider>
+        </MinifixContextProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );

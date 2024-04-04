@@ -2,9 +2,11 @@ import {PropsWithChildren} from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
 
+import {AppColor} from '../../theme/types';
+
 type CommonProps = {
   enableSafeArea?: boolean;
-  backgroundColor?: string;
+  backgroundColor?: AppColor;
 };
 
 type Props = PropsWithChildren & CommonProps;

@@ -12,7 +12,7 @@ type Props = {
   data?: Minifig[];
   selectedId?: string;
   onShowDetailsPress: (url: string) => void;
-  onTilePress: (set_num: string) => void;
+  onTilePress: (minifig: Minifig) => void;
 };
 
 const ITEM_SEPARATOR_SIZE = 30;
