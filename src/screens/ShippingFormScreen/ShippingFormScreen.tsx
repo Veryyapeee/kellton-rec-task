@@ -36,7 +36,7 @@ const validationSchema: Record<string, InputValidationRules> = {
 
 export const ShippingFormScreen = () => {
   return (
-    <Container>
+    <Container enableKeyboardAvoid enableKeyboardDismiss>
       <ShippingFormScreenData>
         {({onSubmit}) => (
           <>
